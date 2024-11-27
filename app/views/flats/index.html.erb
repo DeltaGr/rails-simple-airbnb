@@ -1,0 +1,10 @@
+<h1>All Flats</h1>
+
+<ul>
+  <% @flats.each do |flat| %>
+    <li>
+      <%= link_to flat.name, flat_path(flat) %> - <%= flat.price_per_night %> per night
+      <%= link_to 'Delete', flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
